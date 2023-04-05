@@ -1,8 +1,8 @@
-F.G.- index.php
-F.D.- search.php
-F.F. -server.php, form_server.php, create.php
-F.C.	update.php
-Bruno	 - create.php, Base de dados, register.php
+F.G. - index.php
+F.D. - search.php
+F.F. - server.php, form_server.php, create.php
+F.C. - update.php
+Bruno	- create.php, Base de dados, register.php
 Ivo -	delete.php
 Duarte - client.php, form_client.php
 Jessica - login.php
