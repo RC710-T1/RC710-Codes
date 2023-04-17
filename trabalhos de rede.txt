@@ -1,9 +1,9 @@
-F.G. - index.php
+F.G. - index.php-feito
 F.D. - search.php
-F.F. - server.php, form_server.php, create.php
+F.F. - confirmacao_eleminar_conta.php, sucesso_confirmacao.php 
 F.C. - update.php
-Bruno	- create.php, Base de dados, register.php
-Ivo -	delete.php
-Duarte - client.php, form_client.php
-Jessica - login.php
-Antonio - create.php, Base de dados
+Bruno	- register.php-feito
+Ivo -	delete.php-feito
+Duarte - os_meus_dados.php
+Jessica - login.php-feito
+Antonio - Base de dados-feito
