@@ -23,10 +23,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   
   
-  $sql = "INSERT INTO tab_user (usr_username_id, usr_email, usr_pwd, usr_Data_Nas) VALUES ('$username', '$email', '$password', '$datanascimento')";
+  $sql = "INSERT INTO tab_user (usr_username_id, usr_email, usr_pwd, usr_Data_Nas, usr_timestamp) VALUES ('$username', '$email', '$password', '$datanascimento', CURRENT_TIMESTAMP)";
   
   if($conn->query($sql) === TRUE){
     echo "Utilizador registado com sucesso!";
+    sleep(5);
+    header("Location: http://localhost/RC710_Login.php");
+    exit(); 
+
+
   } else{
     echo "Erro ao registar o utilizador: " . $conn->error;
   }
@@ -59,8 +64,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <label for="datanascimento">Data de nascimento:</label>
     <input type="datanascimento" name="datanascimento" required><br><br>
     
-    <input type="submit" value="Registar">
+    <input type="submit" name='reslt01' value="Registar">
   </form>
+    <!-- <?php
+      // if (isset($_GET['reslt01'])) {
 
+      // }
+    ?> -->
 </body>
 </html>
