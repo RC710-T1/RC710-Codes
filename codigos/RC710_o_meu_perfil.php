@@ -27,7 +27,7 @@
          // Lógica para exibir o menu pop-up
          function mostrarPopup() {
             var popup = document.getElementById("popup");
-            if (popup.style.display === "none") {
+            if (popup.style.display === "none") {dsd
                popup.style.display = "block";
             } else {
                popup.style.display = "none";

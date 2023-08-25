@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $username = $_POST["username"];
   $email = $_POST["email"];
   $password = $_POST["password"];
-  $datanascimento = $_POST["datanascimento"];
+  $datanascimento = $_POST["dataNascimento"];
 
   
   
@@ -62,14 +62,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <input type="password" name="password" required><br><br>
 
     <label for="datanascimento">Data de nascimento:</label>
-    <input type="datanascimento" name="datanascimento" required><br><br>
+    <input type="date" class="form-control" name="dataNascimento" id="inputDate"><br><br>
     
     <input type="submit" name='reslt01' value="Registar">
   </form>
-    <!-- <?php
-      // if (isset($_GET['reslt01'])) {
 
-      // }
-    ?> -->
 </body>
 </html>

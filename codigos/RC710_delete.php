@@ -2,30 +2,33 @@
 <html>
     <body style="background-color: #E0FFFF">
         <form action="" method="post">
-            Nome da conta<input type="text" name="name" required><br>
+            Nome da conta<input type="text" id="usuario" name="name" ><br>
             <input type=submit value=delete name="Delete account">
             <?php
                 if(isset($_POST["delete"])){
-                    $hostname ="localhost";
-                    $username =" root";
-                    $password ="";
-                    $databasename ="chat_rede_social";
+                    require('RC710_Connect.php');
+                    $user=$_POST['usuario'];
 
-                    $connect=mysqli_connect($hostname, $username, $password,$databasename);
-
-                    $user=$_POST['name'];
-
-                    if ($connect->connect_error){
-                        die("Erro a conectar:" . $conn -> connect_error);
-                    }
-
-                    $sql = "DELETE FROM tab_user where $user";
-                    $delete = mysqli_query($connect,$sql);
+                    $sql = "SELECT FROM tab_user WHERE '$user'";
+                    $resultado = $conn->query($sql);
                         
-                    if ($result){
-                        echo "Utiliazdor eleminado com sucesso";
+                    if ($result->num_rows > 0){
+                        echo "O usuario existe!";
+
+                        $stmt = mysqli_prepare($conn,"DELETE FROM tab_user WHERE nome = ?");
+
+                        mysqli_stmt_bind_param($stmt, "s", $user);
+
+                        mysqli_stmt_execute($stmt);
+
+                        if (mysqli_num_rows($conn) > 0){
+                            echo " O User deletado";
+                        }else{
+                            echo "O User não pode ser elemindo";
+                        }
+                        
                     }else{
-                        echo"Erro ao deletar utilizador" . $conn->error;
+                        echo"o Usuario não existe";
                     }
 
                     $conn->close();
